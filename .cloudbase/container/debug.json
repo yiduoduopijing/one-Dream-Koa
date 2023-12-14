@@ -3,7 +3,8 @@
     {
       "name": "one-dream-koa",
       "domain": "",
-      "ip": ""
+      "ip": "",
+      "containerId": "6f4559d96b47fb290429091e96ae957c4b3d87b102ec8fb18e13078f8d977c68"
     }
   ],
   "config": {
