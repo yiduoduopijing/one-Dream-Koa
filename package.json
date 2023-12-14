@@ -1,23 +1,32 @@
 {
-  "name": "wxcloudrun-koa",
+  "name": "koa-node",
   "version": "1.0.0",
-  "description": "微信云托管 koa 框架模板",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon ./src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cli": "node ./src/index.js create"
   },
+  "keywords": [],
   "author": "",
-  "license": "Apache-2.0",
-  "engines": {
-    "node": ">=12.0.0"
-  },
+  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.1",
+    "@koa/router": "^10.1.1",
+    "dotenv": "^16.0.0",
+    "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.4",
-    "koa-bodyparser": "^4.3.0",
-    "koa-logger": "^3.2.1",
-    "koa-router": "^10.1.1",
+    "koa-body": "^4.2.0",
+    "koa2-cors": "^2.0.6",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.13.0"
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.17.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "commander": "^9.0.0",
+    "fs-extra": "^10.0.1",
+    "inquirer": "^8.2.1",
+    "kolorist": "^1.5.1"
   }
 }
