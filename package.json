@@ -1,8 +1,8 @@
 {
-  "name": "koa-node",
+  "name": "wxcloudrun-koa",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "微信云托管 koa 框架模板",
+  "main": "./src/main.js",
   "scripts": {
     "start": "nodemon ./src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "dependencies": {
     "@koa/router": "^10.1.1",
     "dotenv": "^16.0.0",

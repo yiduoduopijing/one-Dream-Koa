@@ -1,0 +1,45 @@
+{
+  "containers": [
+    {
+      "name": "one-dream-koa",
+      "domain": "",
+      "ip": "",
+      "containerId": "7a03c3ba8903c9803c57d133611971d3c0222fdc0af360d04b838e4c783bb350"
+    }
+  ],
+  "config": {
+    "one-dream-koa": {
+      "containerPort": 80,
+      "dockerfilePath": "Dockerfile",
+      "buildDir": "",
+      "minNum": 0,
+      "maxNum": 5,
+      "cpu": 1,
+      "mem": 2,
+      "policyType": "cpu",
+      "policyThreshold": 80,
+      "policyDetails": [
+        {
+          "PolicyType": "cpu",
+          "PolicyThreshold": 80
+        },
+        {
+          "PolicyType": "mem",
+          "PolicyThreshold": 80
+        }
+      ],
+      "envParams": {
+        "MYSQL_USERNAME": "root",
+        "MYSQL_PASSWORD": "Li3141086676!",
+        "MYSQL_ADDRESS": "sh-cynosdbmysql-grp-0wuwmcbc.sql.tencentcdb.com:23194"
+      },
+      "customLogs": "stdout",
+      "initialDelaySeconds": 2,
+      "dataBaseName": "nodejs_demo",
+      "executeSQLs": [
+        "CREATE DATABASE IF NOT EXISTS nodejs_demo;",
+        "USE nodejs_demo;"
+      ]
+    }
+  }
+}
