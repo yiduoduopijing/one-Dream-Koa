@@ -47,5 +47,5 @@ const _errorHandler = (err, req, res, next) => {
     })  
   }
 
-  app.use(_errorHandler)
+app.use(_errorHandler)
 module.exports = app

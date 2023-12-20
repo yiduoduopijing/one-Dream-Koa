@@ -1,9 +1,9 @@
 const Card = require('../model/card.model')//引入user模型
 
 class CardService{
-    async createCard(uid,avatar,userInfotype,username,postTop,status,createTime,content,type,media,address,readCount,collectionCount,isCollection,commentCount){
-        return await Card.create({uid,avatar,userInfotype,username,postTop,status,createTime,content,type,media,address,readCount,collectionCount,isCollection,commentCount})//创建数据库条目 更多查询器参考https://www.sequelize.com.cn/core-concepts/model-querying-basics
-    }
+    // async createCard(uid,avatar,userInfotype,username,postTop,status,createTime,content,type,media,address,readCount,collectionCount,isCollection,commentCount){
+    //     return await Card.create({uid,avatar,userInfotype,username,postTop,status,createTime,content,type,media,address,readCount,collectionCount,isCollection,commentCount})//创建数据库条目 更多查询器参考https://www.sequelize.com.cn/core-concepts/model-querying-basics
+    // }
     
     // //  登陆
     // async getUserinfo({username,id}){

@@ -1,23 +1,47 @@
-const {DataTypes} = require('sequelize')
+const { DataTypes } = require('sequelize')
 
 const seq = require('../db/sql')
 
 //username,password 为表的字段
 
-const User = seq.define('baobei_user',{
-    username:{
-        type:DataTypes.STRING,//数据类型 更多数据类型参考https://www.sequelize.com.cn/core-concepts/model-basics#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B
-        allowNull:false,//列参数-是否能为空
-        unique:true,//列参数-创建唯一约束的简写 更多列参数可以参考https://www.sequelize.com.cn/core-concepts/model-basics#%E5%88%97%E5%8F%82%E6%95%B0
-        comment:'用户名，唯一'
-    },
-    password:{
-        type:DataTypes.CHAR(64),
+const User = seq.define('user', {
+    openid: { //微信用户的唯一标识，是用户的登录凭证。
+        type: DataTypes.STRING,
         allowNull: false,
-        comment: "用户密码"
+        unique: true,
+    },
+    session_key: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+    unionid: { //  微信用户的联合标识，一般在多个应用之间共享。
+        type: DataTypes.STRING,
+        unique: true,
+    },
+    nickname: { // 用户昵称。
+        type: DataTypes.STRING,
+    },
+    avatarUrl: { //  用户头像地址。
+        type: DataTypes.STRING,
+    },
+    gender: { //用户性别，可能是数字表示（0表示未知，1表示男性，2表示女性）。
+        type: DataTypes.INTEGER,
+    },
+    province: { // 用户所在省份。
+        type: DataTypes.STRING,
+    },
+    city: { // 用户所在城市。
+        type: DataTypes.STRING,
     }
+},{
+    timestamps: true, // 自动生成 createdAt 和 updatedAt 字段
 })
 
-User.sync()//模型同步
+User.sync().then(() => {
+    console.log('模型同步成功');
+  })
+  .catch((error) => {
+    console.error('模型同步失败', error);
+  });
 
 module.exports = User

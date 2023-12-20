@@ -19,7 +19,6 @@ class CardController {
 
     async addCard (ctx,next){
         try {
-            console.log(ctx.request.body);
             const {uid,avatar,userInfotype,username,postTop,status,createTime,content,type,media,address,readCount,collectionCount,isCollection,commentCount} = ctx.request.body
             const res = await createCard(uid,avatar,userInfotype,username,postTop,status,createTime,content,type,media,address,readCount,collectionCount,isCollection,commentCount)//调用createCard方法传入参数
 

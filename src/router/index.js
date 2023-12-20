@@ -10,6 +10,9 @@ fs.readdirSync(__dirname).forEach(file => {
         router.use(r.routes())
     }
 })
-router.get('/getingo')
+
+router.get('/',(ctx,next) => {
+    ctx.body = "后端服务已启动"
+})
 
 module.exports = router

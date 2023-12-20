@@ -97,7 +97,12 @@ const Card = seq.define('card',{
     },
 })
 
-Card.sync()//模型同步
+Card.sync().then(() => {
+    console.log('模型同步成功');
+  })
+  .catch((error) => {
+    console.error('模型同步失败', error);
+  });
 
 module.exports = Card
 

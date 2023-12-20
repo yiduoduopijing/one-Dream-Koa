@@ -33,5 +33,15 @@ module.exports = {
         code:'10010',
         message:'参数错误',
         result:''
+    },
+    WxError:{
+        code:'10101',
+        message:'微信登录失败',
+        result:''
+    },
+    userParameterError:{
+        code:'-1',
+        message:'code参数错误',
+        result:''
     }
 }

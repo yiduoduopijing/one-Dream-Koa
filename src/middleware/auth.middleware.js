@@ -3,10 +3,10 @@ const jwt = require('jsonwebtoken')
 const {TokenExpiredError,JsonWebTokenError} = require('../error/error')
 
 const auth = async (ctx,next)=> {
-
+    const appSecret= 'b69c9a06fb8d41e13be29621b1eaae49'
     try {
         const {token} = ctx.request.header
-        ctx.state.user = jwt.verify(token,'fasfasf')//token验证，如果合法则存在变量ctx.state.user中
+        ctx.state.user = jwt.verify(token,appSecret)//token验证，如果合法则存在变量ctx.state.user中
     }catch(err){
         switch (err.name) {
             case 'TokenExpiredError':
