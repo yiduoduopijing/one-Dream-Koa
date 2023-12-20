@@ -10,10 +10,9 @@ const User = seq.define('user', {
         allowNull: false,
         unique: true,
     },
-    session_key: {
+    phone: { // 用户手机号
         type: DataTypes.STRING,
-        allowNull: false,
-      },
+    },
     unionid: { //  微信用户的联合标识，一般在多个应用之间共享。
         type: DataTypes.STRING,
         unique: true,
@@ -33,15 +32,15 @@ const User = seq.define('user', {
     city: { // 用户所在城市。
         type: DataTypes.STRING,
     }
-},{
+}, {
     timestamps: true, // 自动生成 createdAt 和 updatedAt 字段
 })
 
 User.sync().then(() => {
     console.log('模型同步成功');
-  })
-  .catch((error) => {
-    console.error('模型同步失败', error);
-  });
+})
+    .catch((error) => {
+        console.error('模型同步失败', error);
+    });
 
 module.exports = User
